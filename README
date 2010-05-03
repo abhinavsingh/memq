@@ -1,2 +1,22 @@
 MEMQ : Fast queue implementation using Memcached and PHP only
+--------------------------------------------------------------
+MEMQ is a fast queue implementation written in PHP using memcached as data store
+
+Usage:
+------
+- MEMQ::is_empty($queue);
+return TRUE if $queue is empty, else FALSE
+
+- MEMQ::enqueue($queue, $item);
+If $queue do not exist, MEMQ initialize it
+Finally, Queue up passed $item in $queue
+returns $id of the queued up item
+
+- MEMQ::dequeue($queue, $after_id, $till_id);
+Dequeue an item from $queue
+$after_id and $till_id are optional paramaters for range dequeueing
+
+Read More:
+----------
+For benchmarking and other pros/cons read: 
 http://abhinavsingh.com/blog/2010/02/memq-fast-queue-implementation-using-memcached-and-php-only/
